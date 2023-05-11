@@ -1,0 +1,17 @@
+(X)			-Capturar excepcion cuando el backend se cierra y se quiere conectar con SOCKET.IO
+(V) 		-Las barras de porcentaje calculan mal (Ej: cuando es 1.9% marcan 19%)
+(V)			-Centrar las tarjetas en la mitad del contenedor principal (P)
+
+(V)			--- PARA CADA ACCION SOBRE SERVIDORES VOLVER A INGRESAR LA CONTRASEÑA ----
+			-Cuando verifica la contraseña caputrar error 401 (unauthorized) si no es valida
+
+(V)			-Botones de manejo de appserver (reiniciar, apagar, iniciar)
+(V)			-Dialog de manejo de componentes CERTA (On|Off)
+(V)			-Drag&Drop orden de tarjetas
+
+(V)			-Verificar permisos de usuario para cambiar estados de servidores
+			-Persistir opciones de usuario (como orden tarjetas, modo oscuro default, orden por dominio, agrupamiento por distrito)
+(V)			-Adaptar a pantalla de telefono (excede el ancho de pantalla en telefonos L incluso)
+(V)			-Tarjetas muy pegadas al margen inferior
+(X)			-Drag&Drop error: (cuando hay mas de 2 tarjetas y se mueve la del medio a la ultima posicion)
+(V)			-Cuando se recibe el mensaje x socket "eliminarServidor" eliminarlo de la lista			

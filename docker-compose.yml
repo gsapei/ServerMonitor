@@ -1,0 +1,51 @@
+ # docker-compose.yml
+version: "3.8"
+services:
+  
+  postgreSQL:
+    container_name: server-monitor-database
+    image: postgres:14-alpine
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: srvmon
+      POSTGRES_DB: serverMonitor
+    volumes:
+      #script para inicializar base de datos (crea la bd, tablas, relaciones)
+      - ./Script_Postgres.sql:/docker-entrypoint-initdb.d/Script_Postgres.sql
+  
+  server-monitor:
+    container_name: server-monitor-core
+    image: server-monitor
+    restart: always
+    build:
+      context: ./backend/
+    depends_on:
+      - postgreSQL   
+    ports:
+      - "3950:3950"
+      - "3951:3951"
+    command: npm run start
+    #volumes:
+    #  - ./backend/cert:/server-monitor/cert
+
+  servidor-web:
+    container_name: server-monitor-frontend
+    image: nginx:latest
+    ports:
+      - "443:443"
+    restart: always  
+    environment: 
+        BACKEND_API: "https://backend-api"
+    depends_on:
+      - server-monitor
+      - postgreSQL
+    volumes:
+      - ./frontend/entrypoint.sh:/docker-entrypoint.d/entrypoint.sh:ro
+      - ./backend/cert:/usr/share/nginx/cert/:ro
+      - ./frontend/dist/spa:/usr/share/nginx/html/csm:rw
+      - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    links:
+      - server-monitor

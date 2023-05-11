@@ -1,0 +1,1 @@
+export const serverURL = 'BACKEND_API'

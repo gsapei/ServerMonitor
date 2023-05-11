@@ -1,0 +1,6 @@
+(v)		-Cada X tiempo verificar si los Serverside-script estan funcionando mediante websockets y actualizar el estado en la base de datos. 
+(v)		-Procesar comandos enviados mediante POST y enviar via WEBSOCKET el mensaje al ServerSide-Script
+(v)		-Implementar seguridad con tokens en POST request recibidos
+(v)		-Luego de x tiempo(dias?) sin datos del servidor borrarlo de la base de datos.
+(v)		-Implementar seguridad y roles al recibir una peticion de ejecucion en ServerSide-Script
+        -Mostrar logs cuando un servidor es agregado/eliminado, conectado/desconectado, etc.

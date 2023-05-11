@@ -1,0 +1,338 @@
+// app global css
+@font-face {
+    font-family: customFont;
+    src: url(../assets/Myriad_Pro_Light.otf);
+  }
+
+//barra superior de MENU
+.cabecera{
+    position: absolute;
+    background-color: $cabecera;
+}
+
+//tamaño de las tarjetas
+.tarjetas{
+    min-width: 365px;
+    min-height: 535px;
+}
+
+.tarjetaCuerpo{
+    padding: 10px;
+    font-size: 10pt;
+}
+
+.tarjetaCabeceraOnlineTablero{
+    padding-top: 10px;
+    background-color: $positive;
+    height: 80px;
+}
+
+.tarjetaCabeceraEventos{
+    padding-top: 10px;
+    background-color: $cabecera;
+    height: 80px;
+}
+
+.tarjetaCabeceraOnlineAppserverProductivo{
+    padding-top: 10px;
+    background-color: $appserverP;
+    height: 80px;
+}
+
+.tarjetaCabeceraOnlineAppserverDesarrollo{
+    padding-top: 10px;
+    background-image: linear-gradient(45deg, $appserverP 25%, $appserverD 25%, $appserverD 50%, $appserverP 50%, $appserverP 75%, $appserverD 75%, $appserverD 100%);
+    background-size: 40px 40px;    
+    height: 80px;
+}
+
+.tarjetaCabeceraOnlineCromoProductivo{
+    padding-top: 10px;
+    background-color: $cromoP;
+    height: 80px;
+}
+
+.tarjetaCabeceraOnlineCromoDesarrollo{
+    padding-top: 10px;
+    height: 80px;
+    background-image: linear-gradient(45deg, $cromoP 25%, $cromoD 25%, $cromoD 50%, $cromoP 50%, $cromoP 75%, $cromoD 75%, $cromoD 100%);
+    background-size: 40px 40px;
+}
+
+.tarjetaCabeceraOnlineGenericoProductivo{
+    padding-top: 10px;
+    background-color: $generico;
+    height: 80px;
+}
+
+.tarjetaCabeceraOnlineGenericoDesarrollo{
+    padding-top: 10px;
+    height: 80px;
+    background-image: linear-gradient(45deg, $generico 25%, $generico 25%, $generico 50%, $generico 50%, $generico 75%, $generico 75%, $generico 100%);
+    background-size: 40px 40px;
+}
+
+.tarjetaCabeceraOnlineDatabaseProductivo{
+    padding-top: 10px;
+    background-color: $databaseP;
+    height: 80px;
+}
+
+.tarjetaCabeceraOnlineDatabaseDesarrollo{
+    padding-top: 10px;
+    background-image: linear-gradient(45deg, $databaseP 25%, $databaseD 25%, $databaseD 50%, $databaseP 50%, $databaseP 75%, $databaseD 75%, $databaseD 100%);
+    background-size: 40px 40px;    
+    height: 80px;
+}
+
+.tarjetaCabeceraOffline{
+    padding-top: 10px;
+    background-color: $negative;
+    height: 80px;
+}
+
+.tarjetaCabeceraDialogo{
+    background-color: $cabecera;
+}
+
+.contenedor{
+    width:100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+//Color del fondo
+.body--light .fondo{ background: $fondo; }
+.body--dark .fondo{ background: $fondoOsc; } 
+
+
+.body--dark .dialogo_componentes {
+    width: 300px;
+    min-width: 300px; 
+    max-width: 350px;
+    font-size: 10pt;
+    background-color: $tarjetaOsc;
+}
+
+.body--light .dialogo_componentes{
+    width: 300px;
+    min-width: 300px; 
+    max-width: 350px;
+    font-size: 10pt;
+}
+
+.body--dark .tarjetas { background-color: $tarjetaOsc; }
+.body--dark .tablaServidores { background-color: $tarjetaOsc; }
+
+.body--light .botonAccionesSrv{ color: $primary; }
+.body--dark .botonAccionesSrv{ color: $grey-5; }
+
+
+.body--light .leftDrawer{
+    background-color: white;
+    color: black;
+    opacity: 100%;
+}
+
+.body--dark .leftDrawer{
+    background-color: $tarjetaOsc;
+    color: white;
+    opacity: 100%;
+}
+
+
+//INPUT DE LA TARJETA DE LOGIN (NO TOCAR!)
+ .inputLogin .text-negative { color: white !important; }
+ .inputLogin .q-field__bottom { color: white !important; }
+
+ //------------------------------------------------
+ //CAMBIA EL COLOR DE LOS BOTONES ACTIVOS DEL MENU
+ //------------------------------------------------
+ .botonCromo {
+     background-color: $cromoP;
+     color: white;
+ }
+ .botonAppserver{
+    background-color: $appserverP;
+    color: white;    
+ }
+ .botonDatabase{
+    background-color: $databaseP;
+    color: white;    
+ }
+ .botonGenerico{
+    background-color: $generico;
+    color: white;    
+ }
+ .botonTablero{
+    background-color: $negative;
+    color: white;    
+ }
+
+ //------------------------------------------------
+ //CAMBIA EL COLOR DE LOS BOTONES ACTIVOS DEL MENU
+ //------------------------------------------------
+.tooltipAppserver{
+    background-color: $appserverP;
+}
+.tooltipCromo{
+    background-color: $cromoP;
+}
+.tooltipGenerico{
+    background-color: $generico;
+}
+
+.contenedor_login {
+    font-family: customFont;
+    width: 330px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $cabecera;
+  }
+
+  .error_msj{
+    font-family: customFont;
+    font-size: 20pt;
+    text-align: center;
+    color: $cabecera;
+}
+
+.tablaServidores th{
+    background-color: $cabecera;
+    color: white;
+}
+
+ //-------------------------------------------------------------------
+ //DEFINE EL COLOR DE LOS BOTONES POR EL TIPO DE SERVIDOR EN LA TABLA
+ //-------------------------------------------------------------------
+.tablaAppserverProductivo{
+    width: 100%; height: 100%;
+    font-size: 12px;  
+    padding: 10px;
+    color: white;
+    text-align: center;    
+    background-color: $appserverP;
+}
+
+.tablaAppserverDesarrollo{
+    width: 100%; height: 100%;
+    font-size: 12px;  
+    padding: 10px;
+    color: white;
+    text-align: center;    
+    background-image: linear-gradient(45deg, $appserverP 25%, $appserverD 25%, $appserverD 50%, $appserverP 50%, $appserverP 75%, $appserverD 75%, $appserverD 100%);
+    background-size: 40px 40px;   
+}
+
+.tablaCromoProductivo{
+    width: 100%; height: 100%;
+    font-size: 12px;    
+    padding: 10px;
+    color: white;
+    text-align: center;    
+    background-color: $cromoP;
+}
+
+.tablaCromoDesarrollo{
+    width: 100%; height: 100%;
+    font-size: 12px;    
+    padding: 10px;
+    color: white;
+    text-align: center;    
+    background-image: linear-gradient(45deg, $cromoP 25%, $cromoD 25%, $cromoD 50%, $cromoP 50%, $cromoP 75%, $cromoD 75%, $cromoD 100%);
+    background-size: 40px 40px;
+}
+
+.tablaDatabaseProductivo{
+    width: 100%; height: 100%;
+    font-size: 12px;  
+    padding: 10px;
+    color: white;
+    text-align: center;    
+    background-color: $databaseP;
+}
+
+.tablaDatabaseDesarrollo{
+    width: 100%; height: 100%;
+    font-size: 12px;  
+    padding: 10px;
+    color: white;
+    text-align: center;    
+    background-image: linear-gradient(45deg, $databaseP 25%, $databaseD 25%, $databaseD 50%, $databaseP 50%, $databaseP 75%, $databaseD 75%, $databaseD 100%);
+    background-size: 40px 40px;    
+}
+
+.tablaGenerico{
+    width: 100%; height: 100%;
+    font-size: 12px;  
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: $generico;
+}
+
+// fix cabecera de tabla servidores
+.tablaServidores thead tr th { padding: 0px; padding-left: 5px; padding-right: 5px; }
+.tablaServidores thead tr th button { width: 100%; height: 100%; }
+
+.body--dark .q-badge{
+    color: white !important;
+}
+
+//------------------------------------------------
+// Contenedor y tabla EVENTOS (en Tablero alertas)
+//------------------------------------------------
+
+.div_eventos{
+    width:100%; 
+    min-width: 365px;
+    min-height: 710px;    
+}
+
+.tablero{
+    width: 100%;
+    min-width: 365px;
+    min-height: 710px;
+    height: 100%;
+}
+
+.tablero_componentes{
+    min-height: 358px;  
+}
+
+
+.contenedor_logs {
+    width: 100%;
+    min-width: 365px;
+    height: 100%; 
+    min-height: 665px;
+    background-color: $tarjeta; 
+}
+
+.body--dark .contenedor_logs { background-color: $tarjetaOsc; }
+
+.tabla_eventos {
+    background-color: $tarjeta;  
+    min-height: 596px; 
+}
+
+.body--dark .tabla_eventos { background-color: $tarjetaOsc; }
+
+.body--light .tabla_eventos thead tr:first-child {
+    background-color: $tarjeta;
+}
+
+.body--dark .tabla_eventos thead tr:first-child {
+    background-color: $tarjetaOsc;
+}
+
+
+.tabla_eventos thead tr th {
+    position: sticky;
+    z-index: 1;
+}
+
+.tabla_eventos thead tr:last-child th {top: 48px}
+.tabla_eventos thead tr:first-child th {top: 0}

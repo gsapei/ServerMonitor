@@ -1,0 +1,26 @@
+FROM node:latest
+WORKDIR /server-monitor
+COPY package*.json /server-monitor/
+RUN npm install
+COPY . .
+EXPOSE 3950
+EXPOSE 3951
+
+#Evita el error: DPI-1047: Cannot locate a 64-bit Oracle Client library:
+RUN apt-get update && \
+    apt-get install libaio1 && \
+    mkdir /opt/oracle && \
+    cd /opt/oracle && \
+    wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip && \
+    unzip instantclient-basiclite-linuxx64.zip && \
+    rm -f instantclient-basiclite-linuxx64.zip && \
+    cd instantclient* && \
+    rm -f *jdbc* *occi* *mysql* *jar uidrvci genezi adrci && \
+    echo /opt/oracle/instantclient* > /etc/ld.so.conf.d/oracle-instantclient.conf && \
+    ldconfig
+    
+#Setear la zona horaria para que cron-node funcione ?
+ENV TZ='America/Argentina/Buenos_Aires'
+
+WORKDIR /server-monitor
+CMD [ "npm","start" ]
