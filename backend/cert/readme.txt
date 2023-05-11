@@ -4,4 +4,4 @@ en este directorio deben estar contenidos los certificados:
 -ca.pem
 
 y el passphrase dentro de un archivo de texto plano:
--cert/cert.pass
+-cert.pass
