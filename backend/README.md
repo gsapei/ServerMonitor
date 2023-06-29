@@ -26,13 +26,13 @@ const finalConfig = {
   description: "Monitor de servidores linux",
   port: 3950, // Puerto para recibir peticiones POST de los scripts y de acceso al frontend
   timeFormat: "YYYY-MM-DD HH:mm:ss",
-  authServer: "ccsf-gis-lnx06.epe.local",
+  authServer: "authServer.local",
   authPort: 3000,
   authPath: "/site/auth",
   authACL: "/site/acl",
   socketPort: 3951, //puerto de comunicacion de Socket con los Scripts para PING y enviar COMANDOS
   frecuenciaPing: 20, // Frecuencia de PING a los servidores y de evaluacion de alertas (en segundos)
-  linkFrontend: 'https://servicios.epe.santafe.gov.ar/csm/',  // Para incluir el link en los mails de alerta
+  linkFrontend: 'https://external.access.URL',  // Para incluir el link en los mails de alerta
 };
 ```
 #### Conexion a las bases de datos (PostgreSQL y ORACLE):
@@ -50,7 +50,7 @@ const datosConexionPostgres = {
 const datosConexionOracle = { 
   user: 'EPE',
   password: "********",
-  connectString: "ccsf-gis-db01:1521/EPEGIS",
+  connectString: "Oracledb01:1521/USER",
 };
 ```
 

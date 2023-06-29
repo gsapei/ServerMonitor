@@ -34,7 +34,7 @@ tiposervidor_id='' #valor numerico del tipo de servidor -> 1='Generico', 2='Apps
 rolservidor='' # Productivo / Desarrollo
 frecuencia=5 #Tiempo en volver a sensar (en segundos)
 salida='' #archivo de salida de logs
-scriptPath='/home/gisdesa/epe/scripts/CSM/scripts' #directorio donde se encuentran los scripts de control de apps
+scriptPath='/path/to/scripts' #directorio donde se encuentran los scripts de control de apps
 
 #Constantes del programa
 VERSION='1.9'

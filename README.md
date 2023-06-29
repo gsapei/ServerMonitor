@@ -25,10 +25,10 @@ Para desplegar correctamente el sistema debemos llevar a cabo algunos pasos:
 
         var server = https.createServer(
           {
-            cert: fs.readFileSync('cert/ccsf-gis-cont01.pem'),
-            key: fs.readFileSync('cert/ccsf-gis-cont01.key'),
+            cert: fs.readFileSync('cert/cert.pem'),
+            key: fs.readFileSync('cert/cert.key'),
             ca: fs.readFileSync('cert/ca.pem'),
-            passphrase: fs.readFileSync('cert/ccsf-gis-cont01.pass', 'utf8')
+            passphrase: fs.readFileSync('cert/cert.pass', 'utf8')
           },
           app
           );
@@ -37,18 +37,18 @@ Para desplegar correctamente el sistema debemos llevar a cabo algunos pasos:
 3. Editar el archivo `./frontend/nginx.conf` cambiando **solo el nombre** de los archivos correspondientes (no modificar el path /usr/share/nginx/cert/):
 
         listen 443 ssl;
-        ssl_certificate /usr/share/nginx/cert/ccsf-gis-cont01.pem;
-        ssl_certificate_key /usr/share/nginx/cert/ccsf-gis-cont01.key; 
-        ssl_password_file /usr/share/nginx/cert/ccsf-gis-cont01.pass;
+        ssl_certificate /usr/share/nginx/cert/cert.pem;
+        ssl_certificate_key /usr/share/nginx/cert/cert.key; 
+        ssl_password_file /usr/share/nginx/cert/cert.pass;
 
-> La contraseña de los certificados debe estar contenida en un archivo de texto plano sin espacio ni lineas en blanco. En este caso esta contenida en **ccsf-gis-cont01.pass**
+> La contraseña de los certificados debe estar contenida en un archivo de texto plano sin espacio ni lineas en blanco. En este caso esta contenida en **cert.pass**
 
 ##### 2. Modificar archivo YML
 En el archivo **docker-compose.yml** debemos cambiar un único valor del contenedor **server-monitor-frontend** por el nombre de servidor (o IP) donde esta alojado el backend. 
 *Cabe aclarar que si ingresamos el nombre de un servidor o su IP en la intranet, luego los navegadores no podran acceder desde el exterior.*
 
     environment: 
-        BACKEND_API: "https://servicios.epe.santafe.gov.ar"
+        BACKEND_API: "https://external.access.URL"
 
 >**IMPORTANTE**: Cuando corra por primera vez el programa va a remplazar en el archivo `./frontend/dist/spa/js/app.*.js` toda ocurrencia de la palabra **BACKEND_API** por el valor que le asignemos a la variable, y este proceso **no es reversible**.
 Es decir, cuando volvamos a correr por segunda vez el programa ya no existirá la palabra BACKEND_API porque fue remplazada.
